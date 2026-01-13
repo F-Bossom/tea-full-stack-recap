@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Tea</title>
+  </head>
+  <body>
+    <%- include("./partials/navbar.ejs") %>
+
+    <form action="/teas" method="post">
+      <!-- post can be lowercase or capitalized -->
+      <div>
+        <label for="name">Tea Name</label>
+        <input type="text" name="name" id="name" required />
+      </div>
+      <div>
+        <label for="size">Tea Size</label>
+        <select name="size" id="size">
+          <option value="">Please Select a Tea Size</option>
+          <option value="small">Small</option>
+          <option value="medium">Medium</option>
+          <option value="large">Large</option>
+        </select>
+      </div>
+      <div>
+        <label for="description">Description</label>
+        <textarea id="description" name="description" maxlength="150">
+        </textarea>
+      </div>
+      <div>
+        <label for="image">Enter a Image URL</label>
+        <input type="text" name="teaImage" id="image" />
+      </div>
+      <button type="submit">Add Your Tea</button>
+    </form>
+  </body>
+</html>
