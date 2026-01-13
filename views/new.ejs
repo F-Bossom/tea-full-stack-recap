@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Add Tea</title>
-  </head>
+    <%- include("./partials/head.ejs", {title: "New Tea"}) %>
   <body>
     <%- include("./partials/navbar.ejs") %>
 
@@ -18,9 +14,9 @@
         <label for="size">Tea Size</label>
         <select name="size" id="size">
           <option value="">Please Select a Tea Size</option>
-          <option value="small">Small</option>
-          <option value="medium">Medium</option>
-          <option value="large">Large</option>
+          <option value="Small">Small</option>
+          <option value="Medium">Medium</option>
+          <option value="Large">Large</option>
         </select>
       </div>
       <div>

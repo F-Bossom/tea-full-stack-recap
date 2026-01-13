@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Bitcount+Prop+Double+Ink:wght@100..900&family=Bitcount+Prop+Single:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playwrite+NO:wght@100..400&family=Satisfy&display=swap");
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    padding: 0 50px;
+    min-width: 500px;
+    margin: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: large;
+    font-family: "Bitcount Prop Single", "Roboto", sans-serif;
+}
+
+#tea-container {
+    display: flex;
+    height: 100%;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.tea-card {
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: rgba(51, 50, 50, 0.799) 0px 10px 10px 5px;
+    text-decoration: none;
+    max-width: 400px;
+}
+
+.tea-card img {
+    border-radius: 10px;
+}
+
+.font-green {
+    color: darkgreen;
+}
+
+.tea-image {
+    width: 200px;
+}
+
+img {
+    max-width: 200px;
+}

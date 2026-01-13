@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
+      <%- include("./partials/head.ejs", {title: "All Teas"}) %>
   <body>
     <%- include("./partials/navbar.ejs") %>
     <h1>All Teas</h1>
+    <div id="tea-container"></div>
     <% allTeas.map(tea => { %>
-    <div>
-      <h4><%= tea.name %></h4>
-      <p><strong>Size:</strong> <%= tea.size %></p>
-      <p><strong>Description:</strong> <%= tea.description %></p>
+      <a href="/teas/<%= tea._id %>">
+    <div class="tea-card">
+      <h4 class="font-green"><%= tea.name %></h4>
+      <p><strong class="font-green">Size:</strong> <%= tea.size %></p>
+      <p><strong class="font-green">Description:</strong> <%= tea.description %></p>
       <img src="<%= tea.teaImage %>" alt="<%= tea.name %>" />
     </div>
+  </a>
     <% }) %>
   </body>
 </html>

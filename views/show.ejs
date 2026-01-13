@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("./partials/head.ejs", {title: tea.name}) %>
+  <body>
+    <%- include("./partials/navbar.ejs") %>
+
+    <div>
+      <h1><%= tea.name %></h1>
+      <p>Size: <%= tea.size %></p>
+      <p>Description: <%= tea.description %></p>
+      <img class="tea-image" src="<%= tea.teaImage %>" alt="<%= tea.name %>" />
+    </div>
+
+    <div>
+        <form action="/teas/<%= tea._id %>?_method=DELETE" method="POST">
+            <button>Delete Tea</button>
+        </form>
+        <a href="/teas/<%= tea._id %>/edit">
+            <button>Edit Tea</button>
+        </a>
+    </div>
+  </body>
+</html>

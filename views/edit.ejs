@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/head.ejs", {title: "Edit Tea"}) %>
+  <body>
+    <%- include("./partials/navbar.ejs") %>
+
+    <form action="/teas/<%= tea._id %>?_method=PUT" method="post">
+      <!-- post can be lowercase or capitalized -->
+      
+      <div>
+        <label for="name">Tea Name</label>
+        <input type="text" name="name" id="name" value="<%= tea.name %>" required />
+      </div>
+      <div>
+        <label for="size">Tea Size</label>
+        <select name="size" id="size">
+          <option value="">Please Select a Tea Size</option>
+          <option value="Small" <%= tea.size === "Small" ? "selected" : "" %>>Small</option>
+          <option value="Medium" <%= tea.size === "Medium" ? "selected" : "" %>>Medium</option>
+          <option value="Large" <%= tea.size === "Large" ? "selected" : "" %>>Large</option>
+        </select>
+      </div>
+      <div>
+        <label for="description">Description</label>
+        <textarea id="description" name="description" maxlength="150">
+            <%= tea.description %>
+        </textarea>
+      </div>
+      <div>
+        <label for="image">Enter a Image URL</label>
+        <input type="text" name="teaImage" id="image" value="<%= tea.teaImage %>" />
+      </div>
+
+      <button type="submit">Edit Tea</button>
+    </form>
+  </body>
+</html>

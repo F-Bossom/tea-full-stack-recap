@@ -2,7 +2,8 @@
 const express = require("express");
 //setup an express app
 const app = express();
-const Tea = require("./models/tea");
+const teaController = require("./controllers/tea")
+const method0verride = require("method-override")
 
 //Middlewares
 // require DB connection
@@ -13,6 +14,9 @@ app.use(express.json());
 // add a middle to allow form data (from a html page)
 // This adds the form data into the req.body variable
 app.use(express.urlencoded({ extended: true }));
+// add in static / public setup
+app.use(express.static("public"))
+app.use(method0verride("_method"))
 
 //Routes
 app.get("/", (req, res) => {
@@ -20,23 +24,7 @@ app.get("/", (req, res) => {
   res.render("home.ejs");
 });
 
-app.get("/teas", async (req, res) => {
-  // get back all the teas from the database
-  const allTeas = await Tea.find();
-  // res.send(allTeas)
-  res.render("index.ejs", { allTeas });
-});
-
-app.get("/teas/new", (req, res) => {
-  // sends back the new tea form
-  res.render("new.ejs");
-});
-
-app.post("/teas", async (req, res) => {
-  // req.body will hold any data that was submitted from the form
-  const newTea = await Tea.create(req.body);
-  // direct the user to another / different url
-  res.redirect("/teas");
-});
+// attach tea routes to our app
+app.use(teaController)
 
 app.listen(3000, () => console.log("Time for tea on port 3000"));
